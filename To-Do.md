@@ -1,0 +1,67 @@
+-------START UP-------
+    -[] npm install
+    -[] npm run server
+    -[] npm run client
+
+-------DATABASE--------
+    -[] Create database "prime_feedback"
+    -[] Copy sql file in to database query
+    -[] Save feedback to database
+        -[] SANITIZE THE DATA!!!!!!!!!!!!!
+    -[] *STRETCH* GET route to display the database on the /admin page
+    -[] *STRETCH* PUT route for use to edit values
+    -[] *STRETCH* DELETE route for /admin page
+
+-------SERVER-------
+    -[] POST route to database to store data
+    -[] Router for feedback page
+    -[] Data sent to data base on Submit
+    -[] *STRETCH* GET route to display the database on the /admin page
+    -[] *STRETCH* PUT route for use to edit values
+    -[] *STRETCH* DELETE route for /admin page
+
+-------CLIENT-------
+    -[] Import all components
+        -[] Route all components in app if possible
+            -[] History will be needed
+    -[] Decide on 1 reducer or 4 reducers
+        -[] Feedback needs to be stored in reducer/reducers to carry across all pages
+        -[] *STRETCH* Ability to edit reducer/reducers
+    -[] Create components for each page, 6 in total
+        -[] Feeling component (pg 1 of 4)
+            -[] Input for enter data for reducers
+            -[] Rate 1 - 5
+            -[] Next button should take user to next page (history for this)
+            -[] Validation/alert required for this page
+        -[] Understanding component (pg 2 of 4)
+            -[] Input for enter data for reducers
+            -[] Rate 1 - 5
+            -[] Next button should take user to next page (history for this)
+            -[] Validation/alert required for this page
+         -[] Support component (pg 3 of 4)
+            -[] Input for enter data for reducers
+            -[] Rate 1 - 5
+            -[] Next button should take user to next page (history for this)
+            -[] Validation/alert required for this page
+        -[] Comment component (pg 4 of 4)
+            -[] Input for enter data for reducers
+            -[] Text entry input
+            -[] Next button should take user to Review page (history for this)
+            -[] Validation NOT required for this page, possible alert for completion
+        -[] Review component
+            -[] Allow user to view feedback
+            -[] Should display all entries at this point
+            -[] Submit button should send data to database on server
+            -[] Alert user of submission success
+            -[] Click button to take a new servey
+                -[] Should reset all data
+                -[] Go back to first step
+        -[] *STRETCH* Edit button to allow user to go back and edit value. Still need to Validate new entry
+        -[] *STRETCH* Admin page "/admin"
+            -[] Most recent added feedback should be at top of list
+            -[] Allow user to delete feedback on click of button
+                -[] Prompt to confirm deletion before actually deleting info
+            -[] Should delete from database
+-------STYLING-------
+    -[] *STRETCH* Use Material-UI
+        -[] Can include cards, snackbars, buttons, nav bar, icons, theme
