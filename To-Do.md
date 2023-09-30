@@ -13,10 +13,10 @@
     -[] *STRETCH* DELETE route for /admin page
 
 -------SERVER-------
-    -[] POST route to database to store data
-    -[] Router for feedback page
+    -[x] POST route to database to store data
+    -[x] Router for feedback page
     -[] Data sent to data base on Submit
-    -[] *STRETCH* GET route to display the database on the /admin page
+    -[x] *STRETCH* GET route to display the database on the /admin page
     -[] *STRETCH* PUT route for use to edit values
     -[] *STRETCH* DELETE route for /admin page
 
