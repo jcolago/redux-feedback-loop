@@ -6,6 +6,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
 
 function App() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function App() {
         <Header />
         <Feelings />
         <Understanding />
+        <Support />
       </Router>
     </div>
   );
