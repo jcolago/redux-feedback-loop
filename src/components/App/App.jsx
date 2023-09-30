@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom/';
 import './App.css';
 import Header from '../Header/Header';
 import Feelings from '../Feelings/Feelings';
+import Understanding from '../Understanding/Understanding';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Header />
         <Feelings />
+        <Understanding />
       </Router>
     </div>
   );
