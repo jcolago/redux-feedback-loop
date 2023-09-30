@@ -1,11 +1,11 @@
 -------START UP-------
-    -[] npm install
-    -[] npm run server
-    -[] npm run client
+    -[x] npm install
+    -[x] npm run server
+    -[x] npm run client
 
 -------DATABASE--------
-    -[] Create database "prime_feedback"
-    -[] Copy sql file in to database query
+    -[x] Create database "prime_feedback"
+    -[x] Copy sql file in to database query
     -[] Save feedback to database
         -[] SANITIZE THE DATA!!!!!!!!!!!!!
     -[] *STRETCH* GET route to display the database on the /admin page
