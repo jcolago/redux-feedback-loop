@@ -9,6 +9,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import ThankYou from '../ThankYou/ThankYou';
 
 function App() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ function App() {
         <Support />
         <Comments />
         <Review />
+        <ThankYou />
       </Router>
     </div>
   );
