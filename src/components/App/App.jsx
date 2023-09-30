@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
         <Feelings />
         <Understanding />
         <Support />
+        <Comments />
       </Router>
     </div>
   );
