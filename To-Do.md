@@ -24,8 +24,8 @@
     -[] Import all components
         -[] Route all components in app if possible
             -[] History will be needed
-    -[] Decide on 1 reducer or 4 reducers
-        -[] Feedback needs to be stored in reducer/reducers to carry across all pages
+    -[x] Decide on 1 reducer or 4 reducers
+        -[x] Feedback needs to be stored in reducer/reducers to carry across all pages
         -[] *STRETCH* Ability to edit reducer/reducers
     -[] Create components for each page, 6 in total
         -[] Feeling component (pg 1 of 4)

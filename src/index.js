@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { legacy_createStore as createStore, combineReducers, applyMiddleware } from 'redux';
+import { legacy_createStore as createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from "react-redux";
 import logger from "redux-logger"; 
 import App from './components/App/App';
@@ -54,7 +54,7 @@ commentsReducer
 )
 
 ReactDOM.render(
-<Provider sotre={store}>
+<Provider store={store}>
 <App />
 </Provider>
 , document.getElementById('root'));
