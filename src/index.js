@@ -8,7 +8,7 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
 
-const feelingReducer = (state = 0, action) => {
+const feelingsReducer = (state = 0, action) => {
     switch (action.type) {
         case "SET_FEELINGS":
             return action.payload;
@@ -45,7 +45,7 @@ const commentsReducer = (state = "", action) => {
 }
 
 const store = createStore(combineReducers({
-feelingReducer,
+feelingsReducer,
 understandingReducer,
 supportReducer,
 commentsReducer

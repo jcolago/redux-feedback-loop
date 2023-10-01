@@ -9,7 +9,7 @@ export default function Support() {
     const history = useHistory();
 
     const handleClick = (event) => {
-
+        event.preventDefault();
 
         if (!newSupport || newSupport > 5 || newSupport < 1) {
             alert("Please enter a number between 1 and 5 before moving to next page");
@@ -28,10 +28,10 @@ export default function Support() {
             <div>
                 <h2>Page 3 of 4</h2>
             </div>
-            <form>
+            <form onSubmit={handleClick}>
                 <p>How wel are you being supported?</p>
                 <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewSupport(event.target.value)}></input>
-                <button onClick={handleClick}>Next</button>
+                <button type="submit">Next</button>
             </form>
         </div>
     )
