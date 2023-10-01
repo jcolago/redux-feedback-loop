@@ -9,15 +9,15 @@
     -[x] Save feedback to database
         -[x] SANITIZE THE DATA!!!!!!!!!!!!!
     -[] *STRETCH* GET route to display the database on the /admin page
-    -[] *STRETCH* PUT route for use to edit values
+    -[x] *STRETCH* PUT route for use to edit values - found alternate way to do this, editing values before send to database
     -[] *STRETCH* DELETE route for /admin page
 
 -------SERVER-------
     -[x] POST route to database to store data
     -[x] Router for feedback page
-    -[] Data sent to data base on Submit
+    -[x] Data sent to data base on Submit
     -[x] *STRETCH* GET route to display the database on the /admin page
-    -[] *STRETCH* PUT route for use to edit values
+    -[x] *STRETCH* PUT route for use to edit values - found alternate way to do this, editing values before send to database
     -[] *STRETCH* DELETE route for /admin page
 
 -------CLIENT-------
@@ -56,7 +56,7 @@
             -[x] Click button to take a new servey
                 -[x] Should reset all data
                 -[x] Go back to first step
-        -[] *STRETCH* Edit button to allow user to go back and edit value. Still need to Validate new entry
+        -[x] *STRETCH* Edit button to allow user to go back and edit value. Still need to Validate new entry
         -[] *STRETCH* Admin page "/admin"
             -[] Most recent added feedback should be at top of list
             -[] Allow user to delete feedback on click of button
