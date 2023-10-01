@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
   //Post route to get new data to database
   router.post('/',  (req, res) => {
     let newFeedback = req.body;
-    console.log(`Adding book`, newFeedback);
+    console.log(`Adding feedback`, newFeedback);
   
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
                      VALUES ($1, $2, $3, $4);`;
