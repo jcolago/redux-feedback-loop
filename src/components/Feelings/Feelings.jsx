@@ -8,9 +8,9 @@ export default function Feelings() {
     const history = useHistory();
 
     const handleClick = (event) => {
-        
 
-        if(!newFeelings || newFeelings > 5 || newFeelings < 1){
+
+        if (!newFeelings || newFeelings > 5 || newFeelings < 1) {
             alert("Please enter a number between 1 and 5 before moving to next page");
             return;
         }
@@ -20,9 +20,7 @@ export default function Feelings() {
             payload: newFeelings
         });
         history.push("/understanding")
-
-        
-    }
+    };
 
     return (
         <div className="feelings_div">
