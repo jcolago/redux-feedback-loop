@@ -1,3 +1,4 @@
+//Imports for react and redux
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -7,7 +8,7 @@ import logger from "redux-logger";
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-
+//Sets state from Feelings to be used on Review component then sends to database or resets state depending on the dispatch
 const feelingsReducer = (state = 0, action) => {
     switch (action.type) {
         case "SET_FEELINGS":
@@ -18,7 +19,7 @@ const feelingsReducer = (state = 0, action) => {
             return state;
     }
 }
-
+//Sets state from Understanding to be used on Review component then sends to database or resets state depending on the dispatch
 const understandingReducer = (state = 0, action) => {
     switch (action.type) {
         case "SET_UNDERSTANDING":
@@ -29,7 +30,7 @@ const understandingReducer = (state = 0, action) => {
             return state;
     }
 }
-
+//Sets state from Support to be used on Review component then sends to database or resets state depending on the dispatch
 const supportReducer = (state = 0, action) => {
     switch (action.type) {
         case "SET_SUPPORT":
@@ -40,7 +41,7 @@ const supportReducer = (state = 0, action) => {
             return state;
     }
 }
-
+//Sets state from Comments to be used on Review component then sends to database or resets state depending on the dispatch
 const commentsReducer = (state = "", action) => {
     switch (action.type) {
         case "SET_COMMENTS":
@@ -51,7 +52,7 @@ const commentsReducer = (state = "", action) => {
             return state;
     }
 }
-
+//Creates a store for all reducers that can be used in components
 const store = createStore(combineReducers({
     feelingsReducer,
     understandingReducer,
@@ -60,7 +61,7 @@ const store = createStore(combineReducers({
 }),
     applyMiddleware(logger)
 )
-
+//Renders the DOM
 ReactDOM.render(
     <Provider store={store}>
         <App />
