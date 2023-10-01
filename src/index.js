@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const feelingReducer = (state = 0, action) => {
     switch (action.type) {
-        case "SET_FEELING":
+        case "SET_FEELINGS":
             return action.payload;
             default:
                 return state;    
