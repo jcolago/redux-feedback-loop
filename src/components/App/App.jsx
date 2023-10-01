@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom/';
 import './App.css';
 import Header from '../Header/Header';
+import Home from '../Home/Home';
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
@@ -18,6 +19,9 @@ function App() {
     <div className='App'>
       <Router>
         <Header />
+        <Route path= "/" exact>
+          <Home />
+        </Route>
         <Route path = "/feelings">
         <Feelings />
         </Route>

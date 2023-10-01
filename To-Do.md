@@ -6,8 +6,8 @@
 -------DATABASE--------
     -[x] Create database "prime_feedback"
     -[x] Copy sql file in to database query
-    -[] Save feedback to database
-        -[] SANITIZE THE DATA!!!!!!!!!!!!!
+    -[x] Save feedback to database
+        -[x] SANITIZE THE DATA!!!!!!!!!!!!!
     -[] *STRETCH* GET route to display the database on the /admin page
     -[] *STRETCH* PUT route for use to edit values
     -[] *STRETCH* DELETE route for /admin page
@@ -21,41 +21,41 @@
     -[] *STRETCH* DELETE route for /admin page
 
 -------CLIENT-------
-    -[] Import all components
-        -[] Route all components in app if possible
-            -[] History will be needed
+    -[x] Import all components
+        -[x] Route all components in app if possible
+            -[x] History will be needed
     -[x] Decide on 1 reducer or 4 reducers
         -[x] Feedback needs to be stored in reducer/reducers to carry across all pages
         -[] *STRETCH* Ability to edit reducer/reducers
-    -[] Create components for each page, 6 in total
-        -[] Feeling component (pg 1 of 4)
-            -[] Input for enter data for reducers
-            -[] Rate 1 - 5
-            -[] Next button should take user to next page (history for this)
-            -[] Validation/alert required for this page
-        -[] Understanding component (pg 2 of 4)
-            -[] Input for enter data for reducers
-            -[] Rate 1 - 5
-            -[] Next button should take user to next page (history for this)
-            -[] Validation/alert required for this page
-         -[] Support component (pg 3 of 4)
-            -[] Input for enter data for reducers
-            -[] Rate 1 - 5
-            -[] Next button should take user to next page (history for this)
-            -[] Validation/alert required for this page
-        -[] Comment component (pg 4 of 4)
-            -[] Input for enter data for reducers
-            -[] Text entry input
-            -[] Next button should take user to Review page (history for this)
-            -[] Validation NOT required for this page, possible alert for completion
-        -[] Review component
-            -[] Allow user to view feedback
-            -[] Should display all entries at this point
-            -[] Submit button should send data to database on server
-            -[] Alert user of submission success
-            -[] Click button to take a new servey
-                -[] Should reset all data
-                -[] Go back to first step
+    -[x] Create components for each page, 6 in total
+        -[x] Feeling component (pg 1 of 4)
+            -[x] Input for enter data for reducers
+            -[x] Rate 1 - 5
+            -[x] Next button should take user to next page (history for this)
+            -[x] Validation/alert required for this page
+        -[x] Understanding component (pg 2 of 4)
+            -[x] Input for enter data for reducers
+            -[x] Rate 1 - 5
+            -[x] Next button should take user to next page (history for this)
+            -[x] Validation/alert required for this page
+         -[x] Support component (pg 3 of 4)
+            -[x] Input for enter data for reducers
+            -[x] Rate 1 - 5
+            -[x] Next button should take user to next page (history for this)
+            -[x] Validation/alert required for this page
+        -[x] Comment component (pg 4 of 4)
+            -[x] Input for enter data for reducers
+            -[x] Text entry input
+            -[x] Next button should take user to Review page (history for this)
+            -[x] Validation NOT required for this page, possible alert for completion
+        -[x] Review component
+            -[x] Allow user to view feedback
+            -[x] Should display all entries at this point
+            -[x] Submit button should send data to database on server
+            -[x] Alert user of submission success
+            -[x] Click button to take a new servey
+                -[x] Should reset all data
+                -[x] Go back to first step
         -[] *STRETCH* Edit button to allow user to go back and edit value. Still need to Validate new entry
         -[] *STRETCH* Admin page "/admin"
             -[] Most recent added feedback should be at top of list
