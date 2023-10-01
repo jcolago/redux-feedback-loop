@@ -18,12 +18,24 @@ function App() {
     <div className='App'>
       <Router>
         <Header />
+        <Route path = "/feelings">
         <Feelings />
+        </Route>
+        <Route path = "/understanding">
         <Understanding />
+        </Route>
+        <Route path = "/support">
         <Support />
+        </Route>
+        <Route path = "/comments">
         <Comments />
+        </Route>
+        <Route path = "/review">
         <Review />
+        </Route>
+        <Route path = "/thankyou">
         <ThankYou />
+        </Route>
       </Router>
     </div>
   );
