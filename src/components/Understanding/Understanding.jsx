@@ -30,7 +30,7 @@ return (
         </div>
         <form>
             <p>How well are you understanding the content?</p>
-            <input placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></input>
+            <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></input>
             <button onClick={handleClick}> Next</button>
         </form>
     </div>

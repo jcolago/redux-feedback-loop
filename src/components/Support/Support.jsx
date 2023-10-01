@@ -1,5 +1,28 @@
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export default function Support() {
+
+    const [newSupport, setNewSupport] = useState(0);
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const handleClick = (event) => {
+
+
+        if (!newSupport || newSupport > 5 || newSupport < 1) {
+            alert("Please enter a number between 1 and 5 before moving to next page");
+            return;
+        }
+
+        dispatch({
+            type: "SET_SUPPORT",
+            payload: newSupport
+        });
+        history.push("/comments")
+    };
+
     return (
         <div className="support_div">
             <div>
@@ -7,8 +30,8 @@ export default function Support() {
             </div>
             <form>
                 <p>How wel are you being supported?</p>
-                <input placeholder="Enter a number between 1 and 5"></input>
-                <button>Next</button>
+                <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewSupport(event.target.value)}></input>
+                <button onClick={handleClick}>Next</button>
             </form>
         </div>
     )
