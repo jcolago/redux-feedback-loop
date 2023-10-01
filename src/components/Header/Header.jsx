@@ -1,4 +1,6 @@
-
+//Import for react
+import React from "react"
+//Elements displayed on Header component
 export default function Header() {
     return (
         <header className='App-header'>

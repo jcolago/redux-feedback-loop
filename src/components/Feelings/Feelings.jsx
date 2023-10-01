@@ -1,12 +1,15 @@
+//Imports for react and redux
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 export default function Feelings() {
+    //Local state used for sending to feelings reducer
     const [newFeelings, setNewFeelings] = useState(0);
+    //Instanciates useDispatch and useHistory
     const dispatch = useDispatch();
     const history = useHistory();
-
+    //Function runs on click of next button. Validates data and sends dispatch to feelingsReducer. Then sends user to /understanding
     const handleClick = (event) => {
         event.preventDefault();
 
@@ -21,13 +24,13 @@ export default function Feelings() {
         });
         history.push("/understanding")
     };
-
+    //Elements displayed in Feelins component
     return (
         <div className="feelings_div">
             <div>
                 <h2>Page 1 of 4</h2>
             </div>
-            <form onSubmit={handleClick}> 
+            <form onSubmit={handleClick}>
                 <p>How are you feeling today?</p>
                 <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></input>
                 <button type="submit">Next</button>

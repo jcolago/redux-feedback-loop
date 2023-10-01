@@ -1,14 +1,17 @@
+//Imports for react and redux
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 
-
+//Function for Understanding component
 export default function Understanding() {
+    //State used for dispatch to understandingReducer
+    const [newUnderstanding, setNewUnderstanding] = useState(0);
+    //Instanciate useDispatch and useHistory
     const dispatch = useDispatch();
     const history = useHistory();
-    const [newUnderstanding, setNewUnderstanding] = useState(0);
-
+    //Function runs on clikc of next button. Validates data before sending dispatch to set understandingReducer state. Then sends the user to /support
     const handleClick = (event) => {
         event.preventDefault();
 
@@ -24,7 +27,7 @@ export default function Understanding() {
 
         history.push("/support");
     }
-
+    //Elements displayed in Understanding component
     return (
         <div className="understanding_div">
             <div>
