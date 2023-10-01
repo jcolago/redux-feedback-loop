@@ -21,6 +21,22 @@ export default function Review() {
         alert("Feedback has been submitted!");
         submitFeedback();
     }
+    //Functions used to send user back to a page of the form to update entry
+    const updateFeelings = () => {
+        history.push("/feelings");
+    }
+
+    const updateUnderstanding = () => {
+        history.push("/understanding");
+    }
+
+    const updateSupport = () => {
+        history.push("/support");
+    }
+
+    const updateComments = () => {
+        history.push("/comments");
+    }
     //Function runs as part of the handleClick function. Takes reducer info and puts it all into an object and sends to server. Then resets all reducer states and sends the user to the ThankYou page.
     const submitFeedback = () => {
         const feedbackObj = {
@@ -51,9 +67,12 @@ export default function Review() {
                 <h2>Review Your Feedback</h2>
             </div>
             <h3>Feelings: {feelings}</h3>
-            <h3>Understanding: {understanding}</h3>
-            <h3>Support: {support}</h3>
-            <h3>Comments: {comments}</h3>
+            < button onClick={updateFeelings}>Update</button>
+            <h3>Understanding: {understanding}</h3><button onClick={updateUnderstanding}>Update</button>
+            <h3>Support: {support}</h3><button onClick={updateSupport}>Update</button>
+            <h3>Comments: {comments}</h3><button onClick={updateComments}>Update</button>
+            <br/>
+            <br/>
             <button onClick={handleClick}>Submit</button>
         </div>
     )

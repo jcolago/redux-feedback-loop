@@ -1,11 +1,14 @@
 //Imports for react and redux
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { UseSelector } from "react-redux/";
 
 export default function Feelings() {
     //Local state used for sending to feelings reducer
     const [newFeelings, setNewFeelings] = useState(0);
+    //Selector used for update
+    const feelings = useSelector((state) => state.feelingsReducer);
     //Instanciates useDispatch and useHistory
     const dispatch = useDispatch();
     const history = useHistory();
@@ -24,17 +27,41 @@ export default function Feelings() {
         });
         history.push("/understanding")
     };
-    //Elements displayed in Feelins component
+    //Updates state of feelingsReducer on click of update button and sends user to /review
+    const handleUpdate = (event) => {
+        event.preventDefault();
+
+        if (!newFeelings || newFeelings > 5 || newFeelings < 1) {
+            alert("Please enter a number between 1 and 5 before moving to next page");
+            return;
+        }
+
+        dispatch({
+            type: "SET_FEELINGS",
+            payload: newFeelings
+        });
+        history.push("/review");
+    };
+    //Elements displayed in Feelins component. Conditionally renders an update section depending on reducer state
     return (
         <div className="feelings_div">
             <div>
                 <h2>Page 1 of 4</h2>
             </div>
-            <form onSubmit={handleClick}>
-                <p>How are you feeling today?</p>
-                <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></input>
-                <button type="submit">Next</button>
-            </form>
+            {Number(feelings) === 0 ? (
+                <form onSubmit={handleClick}>
+                    <p>How are you feeling today?</p>
+                    <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></input>
+                    <button type="submit">Next</button>
+                </form>) :
+                (
+                    <form onSubmit={handleUpdate}>
+                        <p>How are you feeling today?</p>
+                        <input type="number" placeholder={feelings} onChange={(event) => setNewFeelings(event.target.value)}></input>
+                        <button type="submit">Update</button>
+                    </form>
+                )}
+
         </div>
     )
 }

@@ -2,10 +2,13 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 //Function for Support page
 export default function Support() {
     //Local state used for supportReducer dispatch
     const [newSupport, setNewSupport] = useState(0);
+    //Selector used to update state of reducer
+    const support = useSelector((state) => state.supportReducer);
     //Instanciate useDispatch and useHistory for use
     const dispatch = useDispatch();
     const history = useHistory();
@@ -24,17 +27,40 @@ export default function Support() {
         });
         history.push("/comments")
     };
-    //Elements displayed in Support component
+    //Updates state of supportReducer when update button is clicked and sends the user to /review
+    const handleUpdate = (event) => {
+        event.preventDefault();
+
+        if (!newSupport || newSupport > 5 || newSupport < 1) {
+            alert("Please enter a number between 1 and 5 before moving to next page");
+            return;
+        }
+
+        dispatch({
+            type: "SET_SUPPORT",
+            payload: newSupport
+        });
+        history.push("/review")
+    };
+    //Elements displayed in Support component. Conditionally renders an update section depending on reducer state
     return (
         <div className="support_div">
             <div>
                 <h2>Page 3 of 4</h2>
             </div>
-            <form onSubmit={handleClick}>
-                <p>How wel are you being supported?</p>
-                <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewSupport(event.target.value)}></input>
-                <button type="submit">Next</button>
-            </form>
+            {Number(support) === 0 ? (
+                <form onSubmit={handleClick}>
+                    <p>How wel are you being supported?</p>
+                    <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewSupport(event.target.value)}></input>
+                    <button type="submit">Next</button>
+                </form>) :
+                (
+                    <form onSubmit={handleUpdate}>
+                        <p>How wel are you being supported?</p>
+                        <input type="number" placeholder={support} onChange={(event) => setNewSupport(event.target.value)}></input>
+                        <button type="submit">Update</button>
+                    </form>
+                )}
         </div>
     )
 }
