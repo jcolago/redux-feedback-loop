@@ -28,7 +28,7 @@ The review page allows the user to review and edit their entries. Click the subm
 
 ![Review Page](/screenshots/review.png)
 
-Successful submission of data will take the use to the Thank You page. The use can click the "Leave New Feedback" button to start the process again.
+Successful submission of data will take the user to the Thank You page. The use can click the "Leave New Feedback" button to start the process again.
 
 ![Thank You Page](/screenshots/thankyou.png)
 
