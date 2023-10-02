@@ -16,3 +16,10 @@ CREATE TABLE "feedback" (
 -- Sample feedback item
 INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
 VALUES (4, 4, 5, 'Doing Great!');
+
+--Query text used for other routes
+SELECT * FROM "feedback" ORDER BY "id" DESC;
+
+UPDATE "feedback" SET "flagged" = 'true' WHERE "id" = 1;
+
+DELETE FROM "feedback" WHERE "id" = 1;

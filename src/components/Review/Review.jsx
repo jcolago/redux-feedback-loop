@@ -17,9 +17,22 @@ export default function Review() {
     const understanding = useSelector((state) => state.understandingReducer);
     const support = useSelector((state) => state.supportReducer);
     const comments = useSelector((state) => state.commentsReducer);
-
+//Global variable for use in multiple functions
+    const feedbackObj = {
+        feeling: feelings,
+        understanding: understanding,
+        support: support,
+        comments: comments
+    }
     //Runs on click of submit button. Alerts use of success.
     const handleClick = () => {
+
+        //Data validation for feedback form
+        if (!feedbackObj.feeling || !feedbackObj.understanding || !feedbackObj.support) {
+            alert("Please fill out feelings, understanding, and support sections before submitting");
+            return;
+        }
+
         alert("Feedback has been submitted!");
         submitFeedback();
     }
@@ -41,17 +54,8 @@ export default function Review() {
     }
     //Function runs as part of the handleClick function. Takes reducer info and puts it all into an object and sends to server. Then resets all reducer states and sends the user to the ThankYou page.
     const submitFeedback = () => {
-        const feedbackObj = {
-            feeling: feelings,
-            understanding: understanding,
-            support: support,
-            comments: comments
-        }
-//Data validation for feedback form
-        if (!feedbackObj.feeling || !feedbackObj.understanding || !feedbackObj.support) {
-            alert("Please fill out feelings, understanding, and support sections before submitting");
-            return;
-        }
+       
+
 
         axios
             .post('/feedback', feedbackObj)

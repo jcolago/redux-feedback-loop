@@ -54,7 +54,7 @@ export default function Support() {
                         <h2>Page 3 of 4</h2>
                     </div>
                     <form onSubmit={handleClick}>
-                        <p>How wel are you being supported?</p>
+                        <p>How well are you being supported?</p>
                         <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewSupport(event.target.value)}></TextField>
                         <br />
                         <br />
@@ -67,7 +67,7 @@ export default function Support() {
                             <h2>Page 3 of 4</h2>
                         </div>
                         <form onSubmit={handleUpdate}>
-                            <p>How wel are you being supported?</p>
+                            <p>How well are you being supported?</p>
                             <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder={support} onChange={(event) => setNewSupport(event.target.value)}></TextField>
                             <br />
                             <br />
