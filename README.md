@@ -26,7 +26,7 @@ Enter any comments in the next page. Comments are not requied for submission.
 
 The review page allows the user to review and edit their entries. Click the submit button to submit the information. There will be an alert to confirm that the data was entered. 
 
-![Review Page](/screenshots/support.png)
+![Review Page](/screenshots/review.png)
 
 Successful submission of data will take the use to the Thank You page. The use can click the "Leave New Feedback" button to start the process again.
 
