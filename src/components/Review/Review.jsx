@@ -52,21 +52,14 @@ export default function Review() {
     const updateComments = () => {
         history.push("/comments");
     }
-    //Function runs as part of the handleClick function. Takes reducer info and puts it all into an object and sends to server. Then resets all reducer states and sends the user to the ThankYou page.
+    //Function runs as part of the handleClick function. Takes reducer info and puts it all into an object and sends to server. Then sends the user to the ThankYou page.
     const submitFeedback = () => {
-       
-
-
         axios
             .post('/feedback', feedbackObj)
             .then((response) => {
                 console.log(response.data);
 
                 history.push("/thankyou");
-                dispatch({ type: "CLEAR_FEELINGS" });
-                dispatch({ type: "CLEAR_UNDERSTANDING" });
-                dispatch({ type: "CLEAR_SUPPORT" });
-                dispatch({ type: "CLEAR_COMMENTS" });
             })
             .catch((error) => {
                 console.log('Error in submitting feedback', error);
