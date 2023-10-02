@@ -8,9 +8,9 @@
     -[x] Copy sql file in to database query
     -[x] Save feedback to database
         -[x] SANITIZE THE DATA!!!!!!!!!!!!!
-    -[] *STRETCH* GET route to display the database on the /admin page
+    -[x] *STRETCH* GET route to display the database on the /admin page
     -[x] *STRETCH* PUT route for use to edit values - found alternate way to do this, editing values before send to database
-    -[] *STRETCH* DELETE route for /admin page
+    -[x] *STRETCH* DELETE route for /admin page
 
 -------SERVER-------
     -[x] POST route to database to store data
@@ -18,7 +18,7 @@
     -[x] Data sent to data base on Submit
     -[x] *STRETCH* GET route to display the database on the /admin page
     -[x] *STRETCH* PUT route for use to edit values - found alternate way to do this, editing values before send to database
-    -[] *STRETCH* DELETE route for /admin page
+    -[x] *STRETCH* DELETE route for /admin page
 
 -------CLIENT-------
     -[x] Import all components
@@ -57,11 +57,11 @@
                 -[x] Should reset all data
                 -[x] Go back to first step
         -[x] *STRETCH* Edit button to allow user to go back and edit value. Still need to Validate new entry
-        -[] *STRETCH* Admin page "/admin"
-            -[] Most recent added feedback should be at top of list
-            -[] Allow user to delete feedback on click of button
+        -[x] *STRETCH* Admin page "/admin"
+            -[x] Most recent added feedback should be at top of list
+            -[x] Allow user to delete feedback on click of button
                 -[] Prompt to confirm deletion before actually deleting info
-            -[] Should delete from database
+            -[x] Should delete from database
 -------STYLING-------
     -[x] *STRETCH* Use Material-UI
         -[x] Can include cards, snackbars, buttons, nav bar, icons, theme

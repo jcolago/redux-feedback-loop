@@ -66,7 +66,7 @@ export default function Understanding() {
                 </Card>) :
                 (
                     <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                        <div>Ï
+                        <div>
                             <h2>Page 2 of 4</h2>
                         </div>
                         <form onSubmit={handleUpdate}>
@@ -74,7 +74,7 @@ export default function Understanding() {
                             <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder={understanding} onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
                             <br />
                             <br />
-                            <Button variant="contained" > Update </Button>
+                            <Button variant="contained" type="submit"> Update </Button>
                         </form>
                     </Card>
                 )}

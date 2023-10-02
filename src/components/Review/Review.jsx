@@ -47,6 +47,12 @@ export default function Review() {
             support: support,
             comments: comments
         }
+//Data validation for feedback form
+        if (!feedbackObj.feeling || !feedbackObj.understanding || !feedbackObj.support) {
+            alert("Please fill out feelings, understanding, and support sections before submitting");
+            return;
+        }
+
         axios
             .post('/feedback', feedbackObj)
             .then((response) => {

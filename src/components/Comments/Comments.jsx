@@ -46,7 +46,7 @@ export default function Comments() {
                     </div>
                     <form onSubmit={handleClick}>
                         <p>Any comments you would like to share?</p>
-                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="text" placeholder="Enter comment here" onChange={(event) => setNewComments(event.target.value)}></TextField>
+                        <TextField style={{ width: "400px" }} variant="outlined" type="text" placeholder="Enter comment here" onChange={(event) => setNewComments(event.target.value)}></TextField>
                         <br />
                         <br />
                         <Button variant="contained" type="submit">Next</Button>
@@ -59,7 +59,7 @@ export default function Comments() {
                         </div>
                         <form onSubmit={handleUpdate}>
                             <p>Any comments you would like to share?</p>
-                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="text" placeholder={comments} onChange={(event) => setNewComments(event.target.value)}></TextField>
+                            <TextField style={{ width: "400px" }} variant="outlined" type="text" placeholder={comments} onChange={(event) => setNewComments(event.target.value)}></TextField>
                             <br />
                             <br />
                             <Button variant="contained" type="submit">Update</Button>
