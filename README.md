@@ -10,7 +10,7 @@ Weekend project for Redux week! This feedback form passes entries to the final s
 
 ## Useage
 
-Start by clicking the "Begin Feedback" button on the home page!
+Start by clicking the "Click To Begin" button on the home page!
 
 ![Home Page](/screenshots/homescreen.png)
 
