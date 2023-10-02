@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { UseSelector } from "react-redux/";
+import { Card, Button, TextField } from "@mui/material";
+import "./Feelings.css"
 
 export default function Feelings() {
     //Local state used for sending to feelings reducer
@@ -45,21 +46,32 @@ export default function Feelings() {
     //Elements displayed in Feelins component. Conditionally renders an update section depending on reducer state
     return (
         <div className="feelings_div">
-            <div>
-                <h2>Page 1 of 4</h2>
-            </div>
             {Number(feelings) === 0 ? (
-                <form onSubmit={handleClick}>
-                    <p>How are you feeling today?</p>
-                    <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></input>
-                    <button type="submit">Next</button>
-                </form>) :
-                (
-                    <form onSubmit={handleUpdate}>
+                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
+                    <div>
+                        <h2>Page 1 of 4</h2>
+                    </div>
+                    <form onSubmit={handleClick}>
                         <p>How are you feeling today?</p>
-                        <input type="number" placeholder={feelings} onChange={(event) => setNewFeelings(event.target.value)}></input>
-                        <button type="submit">Update</button>
+                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></TextField>
+                        <br />
+                        <br />
+                        <Button variant="contained" type="submit">Next </Button>
                     </form>
+                </Card>) :
+                (
+                    <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
+                        <div>
+                            <h2>Page 1 of 4</h2>
+                        </div>
+                        <form onSubmit={handleUpdate}>
+                            <p>How are you feeling today?</p>
+                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder={feelings} onChange={(event) => setNewFeelings(event.target.value)}></TextField>
+                            <br />
+                            <br />
+                            <Button variant="contained" type="submit">Update</Button>
+                        </form>
+                    </Card>
                 )}
 
         </div>

@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/";
+import { Card, Button, TextField } from "@mui/material";
+import "./Understanding.css"
 
 
 //Function for Understanding component
@@ -49,23 +51,34 @@ export default function Understanding() {
     //Elements displayed in Understanding component. Conditionally renders an update section depending on reducer state
     return (
         <div className="understanding_div">
-            <div>
-                <h2>Page 2 of 4</h2>
-            </div>
             {Number(understanding) === 0 ? (
-                <form onSubmit={handleClick}>
-                <p>How well are you understanding the content?</p>
-                <input type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></input>
-                <button type="submit"> Next</button>
-            </form>) :
+                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
+                    <div>
+                        <h2>Page 2 of 4</h2>
+                    </div>
+                    <form onSubmit={handleClick}>
+                        <p>How well are you understanding the content?</p>
+                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
+                        <br />
+                        <br />
+                        <Button variant="contained" type="submit"> Next</Button>
+                    </form>
+                </Card>) :
                 (
-                <form onSubmit={handleUpdate}>
-                <p>How well are you understanding the content?</p>
-                <input type="number" placeholder={understanding} onChange={(event) => setNewUnderstanding(event.target.value)}></input>
-                <button type="submit"> Update </button>
-            </form>
-                )} 
-            
+                    <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
+                        <div>Ï
+                            <h2>Page 2 of 4</h2>
+                        </div>
+                        <form onSubmit={handleUpdate}>
+                            <p>How well are you understanding the content?</p>
+                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder={understanding} onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
+                            <br />
+                            <br />
+                            <Button variant="contained" > Update </Button>
+                        </form>
+                    </Card>
+                )}
+
         </div>
     )
 }

@@ -63,5 +63,5 @@
                 -[] Prompt to confirm deletion before actually deleting info
             -[] Should delete from database
 -------STYLING-------
-    -[] *STRETCH* Use Material-UI
-        -[] Can include cards, snackbars, buttons, nav bar, icons, theme
+    -[x] *STRETCH* Use Material-UI
+        -[x] Can include cards, snackbars, buttons, nav bar, icons, theme

@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import { Card, Button } from "@mui/material";
+import "./Review.css"
 
 //Function to display Review page
 export default function Review() {
@@ -63,17 +65,20 @@ export default function Review() {
     //Elements that are displayed in Review component
     return (
         <div className="review">
-            <div>
-                <h2>Review Your Feedback</h2>
-            </div>
-            <h3>Feelings: {feelings}</h3>
-            < button onClick={updateFeelings}>Update</button>
-            <h3>Understanding: {understanding}</h3><button onClick={updateUnderstanding}>Update</button>
-            <h3>Support: {support}</h3><button onClick={updateSupport}>Update</button>
-            <h3>Comments: {comments}</h3><button onClick={updateComments}>Update</button>
-            <br/>
-            <br/>
-            <button onClick={handleClick}>Submit</button>
+            <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
+                <div>
+                    <h2>Review Your Feedback</h2>
+                </div>
+                <h3>Feelings: {feelings}</h3>
+                < Button variant="outlined" onClick={updateFeelings}>Update</Button>
+                <h3>Understanding: {understanding}</h3><Button variant="outlined" onClick={updateUnderstanding}>Update</Button>
+                <h3>Support: {support}</h3><Button variant="outlined" onClick={updateSupport}>Update</Button>
+                <h3>Comments: {comments}</h3><Button variant="outlined" onClick={updateComments}>Update</Button>
+                <br />
+                <br />
+                <hr />
+                <Button className="submitButton" variant="contained" onClick={handleClick}>Submit</Button>
+            </Card>
         </div>
     )
 }

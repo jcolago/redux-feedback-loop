@@ -1,0 +1,11 @@
+.review {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+}
+
+.submitButton {
+    font-weight: bold;
+    width: 150px;
+}
