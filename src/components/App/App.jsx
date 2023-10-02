@@ -14,10 +14,22 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import ThankYou from '../ThankYou/ThankYou';
+import Admin from '../Admin/Admin';
 
 //Function to display on App
 function App() {
   const dispatch = useDispatch();
+
+  const adminFetch = () => {
+    axios
+    .get("/feedback")
+    .then((response) => {
+      dispatch({ type: "ADMIN_FETCH", payload: response.data});
+    })
+    .catch((error) => {
+      console.log("Error in request to fetch feedback", error);
+    });
+  };
 
   //All components and routes for feedback loop
   return (
@@ -44,6 +56,9 @@ function App() {
         </Route>
         <Route path="/thankyou">
           <ThankYou />
+        </Route>
+        <Route path="/admin">
+          <Admin adminFetch = {adminFetch}/>
         </Route>
       </Router>
     </div>

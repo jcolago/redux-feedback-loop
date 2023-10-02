@@ -52,12 +52,22 @@ const commentsReducer = (state = "", action) => {
             return state;
     }
 }
+//Reducer used for /Admin
+const adminReducer = (state = [], action) => {
+    switch (action.type) {
+        case "ADMIN_FETCH":
+            return action.payload;
+        default:
+            return state;
+    };
+};
 //Creates a store for all reducers that can be used in components
 const store = createStore(combineReducers({
     feelingsReducer,
     understandingReducer,
     supportReducer,
-    commentsReducer
+    commentsReducer,
+    adminReducer
 }),
     applyMiddleware(logger)
 )
