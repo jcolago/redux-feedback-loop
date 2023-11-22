@@ -47,4 +47,3 @@ The full list of feedback can be viewed on the admin page where it can be delete
 
 ## Acknowledgment
 Thank you to Emerging Digital Academy (www.emergingacademy.org) for supporting me and teaching me the skills needed to complete this project.
-# redux-feedback-loop
