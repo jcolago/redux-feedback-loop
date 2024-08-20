@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Card, Button, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import "./Comments.css"
+import GlobalCard from "../../global/components/GlobalCard";
 
 //Function for Comments page
 export default function Comments() {
@@ -38,12 +39,8 @@ export default function Comments() {
     //Elements displayed in Comments element. Conditionally renders an update section depending on reducer state
     return (
         <div className="comments_div">
-
             {comments === "" ? (
-                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                    <div>
-                        <h2>Page 4 of 4</h2>
-                    </div>
+                <GlobalCard title="Page 4 of 4">
                     <form onSubmit={handleClick}>
                         <p>Any comments you would like to share?</p>
                         <TextField style={{ width: "400px" }} variant="outlined" type="text" placeholder="Enter comment here" onChange={(event) => setNewComments(event.target.value)}></TextField>
@@ -51,12 +48,9 @@ export default function Comments() {
                         <br />
                         <Button variant="contained" type="submit">Next</Button>
                     </form>
-                </Card>) :
-                (
-                    <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                        <div>
-                            <h2>Page 4 of 4</h2>
-                        </div>
+                </GlobalCard>
+                ) : (
+                    <GlobalCard title="Page 4 of 4">
                         <form onSubmit={handleUpdate}>
                             <p>Any comments you would like to share?</p>
                             <TextField style={{ width: "400px" }} variant="outlined" type="text" placeholder={comments} onChange={(event) => setNewComments(event.target.value)}></TextField>
@@ -64,7 +58,7 @@ export default function Comments() {
                             <br />
                             <Button variant="contained" type="submit">Update</Button>
                         </form>
-                    </Card>
+                    </GlobalCard>
                 )}
         </div>
     )

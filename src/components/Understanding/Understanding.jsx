@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/";
-import { Card, Button, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import "./Understanding.css"
 import GlobalCard from "../../global/components/GlobalCard";
 
