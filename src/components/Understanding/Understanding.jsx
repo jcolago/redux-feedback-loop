@@ -27,18 +27,18 @@ export default function Understanding() {
         });
     };
 
-    const redirectToUnderstanding = () => history.push("/support");
+    const redirectToSupport = () => history.push("/support");
     const redirectToReview = () => history.push("/review");
-   
+
     //Elements displayed in Understanding component. Conditionally renders an update section depending on reducer state
     return (
         <div className="understanding_div">
             {Number(understanding) === 0 ? (
                 <GlobalCard title="Page 2 of 4">
-                    <GlobalForm 
+                    <GlobalForm
                         onSubmit={(e) => {
                             e.preventDefault();
-                            handleFormSubmit(newUnderstanding, validateValue, dispatchAction, redirectToReview);
+                            handleFormSubmit(newUnderstanding, validateValue, dispatchAction, redirectToSupport);
                         }}
                         buttonText="Next"
                     >
@@ -53,10 +53,10 @@ export default function Understanding() {
                 </GlobalCard>
             ) : (
                 <GlobalCard title="Page 2 of 4">
-                    <GlobalForm 
+                    <GlobalForm
                         onSubmit={(e) => {
                             e.preventDefault();
-                            handleFormSubmit(newUnderstanding, validateValue, dispatchAction, redirectToUnderstanding);
+                            handleFormSubmit(newUnderstanding, validateValue, dispatchAction, redirectToReview);
                         }}
                         buttonText="Update"
                     >

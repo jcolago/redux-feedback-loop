@@ -7,6 +7,8 @@ import { TextField } from "@mui/material";
 import "./Support.css"
 import GlobalCard from "../../global/components/GlobalCard";
 import GlobalForm from "../../global/components/GlobalFrom";
+import { handleFormSubmit, validateValue } from "../../global/functions/formHandlers";
+
 //Function for Support page
 export default function Support() {
     //Local state used for supportReducer dispatch
@@ -17,20 +19,16 @@ export default function Support() {
     const dispatch = useDispatch();
     const history = useHistory();
     //Runs function on click of next button. Validates data then dispatches to supportReducer to set state. Then sends the user to /comments.
-    const handleClick = (event) => {
-        event.preventDefault();
-
-        if (!newSupport || newSupport > 5 || newSupport < 1) {
-            alert("Please enter a number between 1 and 5 before moving to next page");
-            return;
-        }
-
+    const dispatchAction = (newValue) => {
         dispatch({
             type: "SET_SUPPORT",
-            payload: newSupport
+            payload: newValue,
         });
-        history.push("/comments")
     };
+
+    const redirectToComments = () => history.push("/comments");
+    const redirectToReview = () => history.push("/review");
+
     //Updates state of supportReducer when update button is clicked and sends the user to /review
     const handleUpdate = (event) => {
         event.preventDefault();
@@ -52,33 +50,45 @@ export default function Support() {
 
             {Number(support) === 0 ? (
                 <GlobalCard title="Page 3 of 4">
-                    <GlobalForm onSubmit={handleClick} buttonText="Next">
+                    <GlobalForm
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleFormSubmit(newSupport, validateValue, dispatchAction, redirectToComments);
+                        }}
+                        buttonText="Next"
+                    >
                         <p>How well are you being supported?</p>
-                        <TextField 
-                            style={{ width: "400px" }} 
-                            label="Number" 
-                            variant="outlined" 
-                            type="number" 
-                            placeholder="Enter a number between 1 and 5" 
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined"
+                            type="number"
+                            placeholder="Enter a number between 1 and 5"
                             onChange={(event) => setNewSupport(event.target.value)}
                         />
                     </GlobalForm>
                 </GlobalCard>
-                ) : (
-                    <GlobalCard title="Page 3 of 4">
-                        <GlobalForm onSubmit={handleUpdate} buttonText="Update">
-                            <p>How well are you being supported?</p>
-                            <TextField 
-                                style={{ width: "400px" }} 
-                                label="Number" 
-                                variant="outlined" 
-                                type="number" 
-                                placeholder={support} 
-                                onChange={(event) => setNewSupport(event.target.value)}
-                            />
-                        </GlobalForm>
-                    </GlobalCard>
-                )}
+            ) : (
+                <GlobalCard title="Page 3 of 4">
+                    <GlobalForm
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleFormSubmit(newSupport, validateValue, dispatchAction, redirectToReview);
+                        }}
+                        buttonText="Update"
+                    >
+                        <p>How well are you being supported?</p>
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined"
+                            type="number"
+                            placeholder={support}
+                            onChange={(event) => setNewSupport(event.target.value)}
+                        />
+                    </GlobalForm>
+                </GlobalCard>
+            )}
         </div>
     )
 }
