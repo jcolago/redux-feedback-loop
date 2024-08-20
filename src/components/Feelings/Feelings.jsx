@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import GlobalCard from "../../global/components/GlobalCard"
 import "./Feelings.css"
 
@@ -49,25 +49,33 @@ export default function Feelings() {
         <div className="feelings_div">
             {Number(feelings) === 0 ? (
                 <GlobalCard title="Page 1 of 4">
-                    <form onSubmit={handleClick}>
+                    <GlobalForm onSubmit={handleClick} buttonText="Next">
                         <p>How are you feeling today?</p>
-                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></TextField>
-                        <br />
-                        <br />
-                        <Button variant="contained" type="submit">Next </Button>
-                    </form>
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined"
+                            type="number"
+                            placeholder="Enter a number between 1 and 5"
+                            onChange={(event) => setNewFeelings(event.target.value)}
+                        />
+                    </GlobalForm>
                 </GlobalCard>
-                ) : (
-                    <GlobalCard title="Page 1 of 4">
-                        <form onSubmit={handleUpdate}>
-                            <p>How are you feeling today?</p>
-                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder={feelings} onChange={(event) => setNewFeelings(event.target.value)}></TextField>
-                            <br />
-                            <br />
-                            <Button variant="contained" type="submit">Update</Button>
-                        </form>
-                    </GlobalCard>
-                )}
+            ) : (
+                <GlobalCard title="Page 1 of 4">
+                    <GlobalForm onSubmit={handleUpdate} buttonText="Update">
+                        <p>How are you feeling today?</p>
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined"
+                            type="number"
+                            placeholder={feelings}
+                            onChange={(event) => setNewFeelings(event.target.value)}
+                        />
+                    </GlobalForm>
+                </GlobalCard>
+            )}
 
         </div>
     )
