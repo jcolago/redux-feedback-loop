@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import "./Support.css"
 import GlobalCard from "../../global/components/GlobalCard";
+import GlobalForm from "../../global/components/GlobalFrom";
 //Function for Support page
 export default function Support() {
     //Local state used for supportReducer dispatch
@@ -51,23 +52,31 @@ export default function Support() {
 
             {Number(support) === 0 ? (
                 <GlobalCard title="Page 3 of 4">
-                    <form onSubmit={handleClick}>
+                    <GlobalForm onSubmit={handleClick} buttonText="Next">
                         <p>How well are you being supported?</p>
-                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewSupport(event.target.value)}></TextField>
-                        <br />
-                        <br />
-                        <Button variant="contained" type="submit">Next</Button>
-                    </form>
+                        <TextField 
+                            style={{ width: "400px" }} 
+                            label="Number" 
+                            variant="outlined" 
+                            type="number" 
+                            placeholder="Enter a number between 1 and 5" 
+                            onChange={(event) => setNewSupport(event.target.value)}
+                        />
+                    </GlobalForm>
                 </GlobalCard>
                 ) : (
                     <GlobalCard title="Page 3 of 4">
-                        <form onSubmit={handleUpdate}>
+                        <GlobalForm onSubmit={handleUpdate} buttonText="Update">
                             <p>How well are you being supported?</p>
-                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder={support} onChange={(event) => setNewSupport(event.target.value)}></TextField>
-                            <br />
-                            <br />
-                            <Button variant="contained" type="submit">Update</Button>
-                        </form>
+                            <TextField 
+                                style={{ width: "400px" }} 
+                                label="Number" 
+                                variant="outlined" 
+                                type="number" 
+                                placeholder={support} 
+                                onChange={(event) => setNewSupport(event.target.value)}
+                            />
+                        </GlobalForm>
                     </GlobalCard>
                 )}
         </div>
