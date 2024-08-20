@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TextField } from "@mui/material";
 import GlobalCard from "../../global/components/GlobalCard"
 import "./Feelings.css"
+import { handleFormSubmit, validateValue } from "../../global/functions/formHandlers";
 
 export default function Feelings() {
     //Local state used for sending to feelings reducer
@@ -33,7 +34,7 @@ export default function Feelings() {
                     <GlobalForm
                         onSubmit={(e) => {
                             e.preventDefault();
-                            handleFormSubmit(newFeelings, validateFeelings, dispatchAction, redirectToUnderstanding);
+                            handleFormSubmit(newFeelings, validateValue, dispatchAction, redirectToUnderstanding);
                         }}
                         buttonText="Next"
                     >
@@ -53,7 +54,7 @@ export default function Feelings() {
                     <GlobalForm
                         onSubmit={(e) => {
                             e.preventDefault();
-                            handleFormSubmit(newFeelings, validateFeelings, dispatchAction, redirectToReview);
+                            handleFormSubmit(newFeelings, validateValue, dispatchAction, redirectToReview);
                         }}
                         buttonText="Update"
                     >

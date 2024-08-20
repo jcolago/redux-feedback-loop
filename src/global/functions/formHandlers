@@ -8,6 +8,6 @@ export const handleFormSubmit = (newValue, validationCallback, dispatchAction, r
     redirectCallback();
 };
 
-export const validateFeelings = (value) => {
+export const validateValue = (value) => {
     return value && value >= 1 && value <= 5;
 };
