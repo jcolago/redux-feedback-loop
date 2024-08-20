@@ -1,8 +1,9 @@
 //Imports for uses
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Card, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import "./Home.css"
+import GlobalCard from "../../global/components/GlobalCard";
 //Home page function
 export default function Home() {
     //Instanciate history for use in handleClick function
@@ -14,10 +15,9 @@ export default function Home() {
     //Elements to be displayed on Home component
     return (
         <div className="home-page">
-            <Card style={{ minWidth: "500px", padding: "10px" }}>
-                <h2>Welcome to the Feedback Form. Please click the button to begin!</h2>
+            <GlobalCard title="Welcome to the Feedback Form. Please click the button to begin!">
                 <Button variant="contained" onClick={handleClick}>Click to begin!</Button>
-            </Card>
+            </GlobalCard>
         </div>
     )
 }

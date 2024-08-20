@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/";
-import { Card, Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import "./Understanding.css"
+import GlobalCard from "../../global/components/GlobalCard";
+import GlobalForm from "../../global/components/GlobalFrom";
+import { handleFormSubmit, validateValue } from "../../global/functions/formHandlers";
 
 
 //Function for Understanding component
@@ -16,69 +19,58 @@ export default function Understanding() {
     //Instanciate useDispatch and useHistory
     const dispatch = useDispatch();
     const history = useHistory();
-    //Function runs on clikc of next button. Validates data before sending dispatch to set understandingReducer state. Then sends the user to /support
-    const handleClick = (event) => {
-        event.preventDefault();
-
-        if (!newUnderstanding || newUnderstanding > 5 || newUnderstanding < 1) {
-            alert("Please enter a number between 1 and 5 before moving to next page");
-            return;
-        }
-
+    //Form handlers and redirects
+    const dispatchAction = (newValue) => {
         dispatch({
             type: "SET_UNDERSTANDING",
-            payload: newUnderstanding
+            payload: newValue,
         });
+    };
 
-        history.push("/support");
-    }
-    //Updates state of understandingReducer
-    const handleUpdate = (event) => {
-        event.preventDefault();
+    const redirectToSupport = () => history.push("/support");
+    const redirectToReview = () => history.push("/review");
 
-        if (!newUnderstanding || newUnderstanding > 5 || newUnderstanding < 1) {
-            alert("Please enter a number between 1 and 5 before moving to next page");
-            return;
-        }
-
-        dispatch({
-            type: "SET_UNDERSTANDING",
-            payload: newUnderstanding
-        });
-
-        history.push("/review");
-    }
     //Elements displayed in Understanding component. Conditionally renders an update section depending on reducer state
     return (
         <div className="understanding_div">
             {Number(understanding) === 0 ? (
-                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                    <div>
-                        <h2>Page 2 of 4</h2>
-                    </div>
-                    <form onSubmit={handleClick}>
+                <GlobalCard title="Page 2 of 4">
+                    <GlobalForm
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleFormSubmit(newUnderstanding, validateValue, dispatchAction, redirectToSupport);
+                        }}
+                        buttonText="Next"
+                    >
                         <p>How well are you understanding the content?</p>
-                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
-                        <br />
-                        <br />
-                        <Button variant="contained" type="submit"> Next</Button>
-                    </form>
-                </Card>) :
-                (
-                    <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                        <div>
-                            <h2>Page 2 of 4</h2>
-                        </div>
-                        <form onSubmit={handleUpdate}>
-                            <p>How well are you understanding the content?</p>
-                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder={understanding} onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
-                            <br />
-                            <br />
-                            <Button variant="contained" type="submit"> Update </Button>
-                        </form>
-                    </Card>
-                )}
-
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined" placeholder="Enter a number between 1 and 5"
+                            onChange={(event) => setNewUnderstanding(event.target.value)}
+                        />
+                    </GlobalForm>
+                </GlobalCard>
+            ) : (
+                <GlobalCard title="Page 2 of 4">
+                    <GlobalForm
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleFormSubmit(newUnderstanding, validateValue, dispatchAction, redirectToReview);
+                        }}
+                        buttonText="Update"
+                    >
+                        <p>How well are you understanding the content?</p>
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined"
+                            placeholder={understanding}
+                            onChange={(event) => setNewUnderstanding(event.target.value)}
+                        />
+                    </GlobalForm>
+                </GlobalCard>
+            )}
         </div>
     )
 }

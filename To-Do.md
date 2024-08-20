@@ -65,3 +65,49 @@
 -------STYLING-------
     -[x] *STRETCH* Use Material-UI
         -[x] Can include cards, snackbars, buttons, nav bar, icons, theme
+
+
+-------NEW TO-DOs----------
+
+--------GLOBAL COMPONENTS------------
+    -[] Global components folder
+        -[] Global Forms
+            -[] Global initial form
+                -[] Import MUI Form components
+                -[] Import ButtonSubmit component
+            -[] Global update form
+                -[] Import MUI Form components
+                -[] Import ButtonUpdate
+        -[] Global Buttons
+            -[] Global ButtonSubmit
+                -[] MUI Styling
+                -[] Import logic from helpers
+            -[] Global ButtonUpdate
+                -[]  MUI Styling
+                -[] Import logic from helpers
+
+---------------HELPER FUNCTIONS/FUNCTION LOGIC-------------
+    -[] Helpers Folder
+        -[] onSubmit logic
+            -[] onSubmit arguments
+            -[] Dispatch and variable
+            -[] history.push to next step
+            -[] Export logic
+        -[] onUpdate logic
+            -[] onUpdate arguments
+            -[] Dispatch and variable
+            -[] history back or push to review page
+            -[] Export logic
+        -[] Final submit logic/function
+        -[] Other functions/helpers as discovered
+
+-----------CURRENT COMPONENTS------------
+    -[] Review component logic for potential extractions
+    -[] Extract reused logic across components
+        -[] Determine local vs. global useage
+    -[] Review component structure for possible UI/UX updates
+    -[] Import new form components
+
+-------------OVERALL PROJECT-----------
+    -[] Convert project to TypeScript
+    -[] Add toast to delete button

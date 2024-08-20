@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Card, Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import "./Comments.css"
+import GlobalCard from "../../global/components/GlobalCard";
+import GlobalForm from "../../global/components/GlobalFrom";
 
 //Function for Comments page
 export default function Comments() {
@@ -38,34 +40,32 @@ export default function Comments() {
     //Elements displayed in Comments element. Conditionally renders an update section depending on reducer state
     return (
         <div className="comments_div">
-
             {comments === "" ? (
-                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                    <div>
-                        <h2>Page 4 of 4</h2>
-                    </div>
-                    <form onSubmit={handleClick}>
+                <GlobalCard title="Page 4 of 4">
+                    <GlobalForm onSubmit={handleClick} buttonText="Next">
                         <p>Any comments you would like to share?</p>
-                        <TextField style={{ width: "400px" }} variant="outlined" type="text" placeholder="Enter comment here" onChange={(event) => setNewComments(event.target.value)}></TextField>
-                        <br />
-                        <br />
-                        <Button variant="contained" type="submit">Next</Button>
-                    </form>
-                </Card>) :
-                (
-                    <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                        <div>
-                            <h2>Page 4 of 4</h2>
-                        </div>
-                        <form onSubmit={handleUpdate}>
-                            <p>Any comments you would like to share?</p>
-                            <TextField style={{ width: "400px" }} variant="outlined" type="text" placeholder={comments} onChange={(event) => setNewComments(event.target.value)}></TextField>
-                            <br />
-                            <br />
-                            <Button variant="contained" type="submit">Update</Button>
-                        </form>
-                    </Card>
-                )}
+                        <TextField
+                            style={{ width: "400px" }}
+                            variant="outlined"
+                            type="text"
+                            placeholder="Enter comment here"
+                            onChange={(event) => setNewComments(event.target.value)}
+                        />
+                    </GlobalForm>
+                </GlobalCard>
+            ) : (
+                <GlobalCard title="Page 4 of 4">
+                    <GlobalForm onSubmit={handleUpdate} buttonText="Update">
+                        <p>Any comments you would like to share?</p>
+                        <TextField
+                            style={{ width: "400px" }}
+                            variant="outlined"
+                            type="text"
+                            placeholder={comments}
+                            onChange={(event) => setNewComments(event.target.value)}></TextField>
+                    </GlobalForm>
+                </GlobalCard>
+            )}
         </div>
     )
 }
