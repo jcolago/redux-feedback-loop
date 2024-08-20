@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Card, Button, TextField } from "@mui/material";
+import {GlobalCard} from "../../global/components/GlobalCard"
 import "./Feelings.css"
 
 export default function Feelings() {
@@ -47,10 +48,7 @@ export default function Feelings() {
     return (
         <div className="feelings_div">
             {Number(feelings) === 0 ? (
-                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                    <div>
-                        <h2>Page 1 of 4</h2>
-                    </div>
+                <GlobalCard title="Page 1 of 4">
                     <form onSubmit={handleClick}>
                         <p>How are you feeling today?</p>
                         <TextField style={{ width: "400px" }} label="Number" variant="outlined" type="number" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewFeelings(event.target.value)}></TextField>
@@ -58,7 +56,7 @@ export default function Feelings() {
                         <br />
                         <Button variant="contained" type="submit">Next </Button>
                     </form>
-                </Card>) :
+                </GlobalCard>) :
                 (
                     <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
                         <div>
