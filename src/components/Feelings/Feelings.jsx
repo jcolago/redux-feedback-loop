@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, TextField } from "@mui/material";
-import { GlobalCard } from "../../global/components/GlobalCard"
+import GlobalCard from "../../global/components/GlobalCard"
 import "./Feelings.css"
 
 export default function Feelings() {

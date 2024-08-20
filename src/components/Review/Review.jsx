@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { Card, Button } from "@mui/material";
 import "./Review.css"
+import GlobalCard from "../../global/components/GlobalCard";
 
 //Function to display Review page
 export default function Review() {
@@ -68,10 +69,7 @@ export default function Review() {
     //Elements that are displayed in Review component
     return (
         <div className="review">
-            <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                <div>
-                    <h2>Review Your Feedback</h2>
-                </div>
+            <GlobalCard title="Review your feedback">
                 <h3>Feelings: {feelings}</h3>
                 < Button variant="outlined" onClick={updateFeelings}>Update</Button>
                 <h3>Understanding: {understanding}</h3><Button variant="outlined" onClick={updateUnderstanding}>Update</Button>
@@ -81,7 +79,7 @@ export default function Review() {
                 <br />
                 <hr />
                 <Button className="submitButton" variant="contained" onClick={handleClick}>Submit</Button>
-            </Card>
+            </GlobalCard>
         </div>
     )
 }
