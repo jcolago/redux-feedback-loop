@@ -1,0 +1,13 @@
+export const handleFormSubmit = (newValue, validationCallback, dispatchAction, redirectCallback) => {
+    if (!validationCallback(newValue)) {
+        alert("Please enter a valid number between 1 and 5");
+        return;
+    }
+
+    dispatchAction(newValue);
+    redirectCallback();
+};
+
+export const validateFeelings = (value) => {
+    return value && value >= 1 && value <= 5;
+};
