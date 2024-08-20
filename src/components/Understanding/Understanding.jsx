@@ -6,6 +6,7 @@ import { useSelector } from "react-redux/";
 import { Button, TextField } from "@mui/material";
 import "./Understanding.css"
 import GlobalCard from "../../global/components/GlobalCard";
+import GlobalForm from "../../global/components/GlobalFrom";
 
 
 //Function for Understanding component
@@ -54,26 +55,30 @@ export default function Understanding() {
         <div className="understanding_div">
             {Number(understanding) === 0 ? (
                 <GlobalCard title="Page 2 of 4">
-                    <form onSubmit={handleClick}>
+                    <GlobalForm onSubmit={handleClick} buttonText="Next">
                         <p>How well are you understanding the content?</p>
-                        <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
-                        <br />
-                        <br />
-                        <Button variant="contained" type="submit"> Next</Button>
-                    </form>
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined" placeholder="Enter a number between 1 and 5"
+                            onChange={(event) => setNewUnderstanding(event.target.value)}
+                        />
+                    </GlobalForm>
                 </GlobalCard>
-                ) : (
-                    <GlobalCard title="Page 2 of 4">
-                        <form onSubmit={handleUpdate}>
-                            <p>How well are you understanding the content?</p>
-                            <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder={understanding} onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
-                            <br />
-                            <br />
-                            <Button variant="contained" type="submit"> Update </Button>
-                        </form>
-                    </GlobalCard>
-                )}
-
+            ) : (
+                <GlobalCard title="Page 2 of 4">
+                    <GlobalForm onSubmit={handleUpdate} buttonText="Update">
+                        <p>How well are you understanding the content?</p>
+                        <TextField
+                            style={{ width: "400px" }}
+                            label="Number"
+                            variant="outlined"
+                            placeholder={understanding}
+                            onChange={(event) => setNewUnderstanding(event.target.value)}
+                        />
+                    </GlobalForm>
+                </GlobalCard>
+            )}
         </div>
     )
 }

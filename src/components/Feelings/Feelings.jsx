@@ -76,7 +76,6 @@ export default function Feelings() {
                     </GlobalForm>
                 </GlobalCard>
             )}
-
         </div>
     )
 }
