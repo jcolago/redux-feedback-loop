@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/";
 import { Card, Button, TextField } from "@mui/material";
 import "./Understanding.css"
+import GlobalCard from "../../global/components/GlobalCard";
 
 
 //Function for Understanding component
@@ -52,10 +53,7 @@ export default function Understanding() {
     return (
         <div className="understanding_div">
             {Number(understanding) === 0 ? (
-                <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                    <div>
-                        <h2>Page 2 of 4</h2>
-                    </div>
+                <GlobalCard title="Page 2 of 4">
                     <form onSubmit={handleClick}>
                         <p>How well are you understanding the content?</p>
                         <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder="Enter a number between 1 and 5" onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
@@ -63,12 +61,9 @@ export default function Understanding() {
                         <br />
                         <Button variant="contained" type="submit"> Next</Button>
                     </form>
-                </Card>) :
-                (
-                    <Card style={{ minWidth: "500px", padding: "10px" }} variant="outlined">
-                        <div>
-                            <h2>Page 2 of 4</h2>
-                        </div>
+                </GlobalCard>
+                ) : (
+                    <GlobalCard title="Page 2 of 4">
                         <form onSubmit={handleUpdate}>
                             <p>How well are you understanding the content?</p>
                             <TextField style={{ width: "400px" }} label="Number" variant="outlined" placeholder={understanding} onChange={(event) => setNewUnderstanding(event.target.value)}></TextField>
@@ -76,7 +71,7 @@ export default function Understanding() {
                             <br />
                             <Button variant="contained" type="submit"> Update </Button>
                         </form>
-                    </Card>
+                    </GlobalCard>
                 )}
 
         </div>

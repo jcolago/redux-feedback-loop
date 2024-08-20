@@ -58,8 +58,8 @@ export default function Support() {
                         <br />
                         <Button variant="contained" type="submit">Next</Button>
                     </form>
-                </GlobalCard>) :
-                (
+                </GlobalCard>
+                ) : (
                     <GlobalCard title="Page 3 of 4">
                         <form onSubmit={handleUpdate}>
                             <p>How well are you being supported?</p>

@@ -56,8 +56,8 @@ export default function Feelings() {
                         <br />
                         <Button variant="contained" type="submit">Next </Button>
                     </form>
-                </GlobalCard>) :
-                (
+                </GlobalCard>
+                ) : (
                     <GlobalCard title="Page 1 of 4">
                         <form onSubmit={handleUpdate}>
                             <p>How are you feeling today?</p>
